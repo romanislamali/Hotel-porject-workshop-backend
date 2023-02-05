@@ -38,7 +38,10 @@ public class HotelRestController {
     @Autowired
     StorageService storageService;
 
-
+    @PostMapping("/hotel/add")
+    public void hotelSave(@RequestBody Hotel h){
+        hotelService.saveHotel(h);
+    }
 
     @GetMapping("/hotel/all")
     public List<Hotel> allHotel(){

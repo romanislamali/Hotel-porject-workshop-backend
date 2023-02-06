@@ -1,38 +1,34 @@
 package org.idb.Tourism.restcontroller;
 
 import org.idb.Tourism.entity.HotelFacilities;
+import org.idb.Tourism.entity.Location;
 import org.idb.Tourism.service.HotelFacilitiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/api/hotelfacilities")
+@CrossOrigin(origins = {"*"})
 public class HotelFacilitiesRestController {
 
     @Autowired
     HotelFacilitiesService hotelFacilitiesService;
 
-
-    public String hFaciForm(Model m){
-        m.addAttribute("hfList", hotelFacilitiesService.getALlHFacilities());
-        m.addAttribute("hfacilities", new HotelFacilities());
-//        m.addAttribute("messege", "Hotel facilities successfully added!!");
-        return "hotel-facilities-form";
-    }
-
-
-    public String hFaciAdd(@ModelAttribute("hfacilities") HotelFacilities hf, Model m) {
+    @PostMapping("/hotelfacilities/add")
+    public void HotelFacilitiesSave(@RequestBody HotelFacilities hf){
         hotelFacilitiesService.saveHFacilities(hf);
-        return "redirect:/hf-form";
     }
 
+    @GetMapping("/hotelfacilities/all")
+    public List<HotelFacilities> allHotelFacilities(){
+        return hotelFacilitiesService.getALlHFacilities();
+    }
 
-    public String hFaciLsit(Model m) {
-        m.addAttribute("hfList",hotelFacilitiesService.getALlHFacilities());
-        return "hotelfacilitieslist";
+    @DeleteMapping("/hotelfacilities/{id}")
+    public void deleteFacilities(@PathVariable int id) {
+        hotelFacilitiesService.deleteHFacById(id);
     }
 
 

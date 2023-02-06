@@ -2,8 +2,11 @@ package org.idb.Tourism.restcontroller;
 
 import org.idb.Tourism.entity.HotelFacilities;
 import org.idb.Tourism.entity.Location;
+import org.idb.Tourism.entity.Room;
+import org.idb.Tourism.repository.IHotelFacilitiesRepo;
 import org.idb.Tourism.service.HotelFacilitiesService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +18,8 @@ public class HotelFacilitiesRestController {
 
     @Autowired
     HotelFacilitiesService hotelFacilitiesService;
+    @Autowired
+    private IHotelFacilitiesRepo iHotelFacilitiesRepo;
 
     @PostMapping("/hotelfacilities/add")
     public void HotelFacilitiesSave(@RequestBody HotelFacilities hf){
@@ -26,23 +31,14 @@ public class HotelFacilitiesRestController {
         return hotelFacilitiesService.getALlHFacilities();
     }
 
-    @DeleteMapping("/hotelfacilities/{id}")
+    @DeleteMapping("/hotelfacilities/delete/{id}")
     public void deleteFacilities(@PathVariable int id) {
         hotelFacilitiesService.deleteHFacById(id);
     }
 
-
-    public String hFaciUpdate(@ModelAttribute("hfacid") Integer hfacid, Model m){
-        HotelFacilities r= hotelFacilitiesService.findHFacById(hfacid);
-        m.addAttribute("hfacilities", r);
-        return "hotel-facilities-form";
-    }
-
-
-
-    public  String hFaciDelete(@ModelAttribute("hfacid") Integer hfacid, Model m){
-        hotelFacilitiesService.deleteHFacById(hfacid);
-        return "redirect:/h_fac_list";
+    @GetMapping("/hotelfacilities/update/{id}")
+    public HotelFacilities getHotelFacilitiesBylId(@PathVariable("id") int id){
+      return  hotelFacilitiesService.findHFacById(id);
     }
 
 }

@@ -17,17 +17,17 @@ public class InventoryRestController {
     InventoryService service;
 
 
-    @PostMapping("/inventory/add")
+    @PostMapping("inventory/add")
     public void addNewinventory(@RequestBody Inventory i){
         service.saveinventory(i);
     }
 
-    @GetMapping("/inventory/all")
+    @GetMapping("inventory/all")
     public List<Inventory> allinventory(){
         return service.getAllinventory();
     }
 
-
+    @DeleteMapping("inventory/delete/{id}")
     public String deleteinventory(@PathVariable("iid") Integer iid){
         service.deleteinventoryById(iid);
         return "redirect:/in_reg";

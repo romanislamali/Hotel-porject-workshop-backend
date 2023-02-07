@@ -12,24 +12,27 @@ import java.util.List;
 public class HotelFacilitiesService {
 
     @Autowired
-    IHotelFacilitiesRepo hotelFacilities;
+    IHotelFacilitiesRepo hFrepo;
 
     public void saveHFacilities(HotelFacilities hf){
-        hotelFacilities.save(hf);
+        hFrepo.save(hf);
     }
 
     public  void deleteHFacById(int hfacid){
-        hotelFacilities.deleteById(hfacid);
+        hFrepo.deleteById(hfacid);
     }
 
     public List<HotelFacilities> getALlHFacilities(){
-        return  hotelFacilities.findAll();
+        return  hFrepo.findAll();
     }
 
     public HotelFacilities findHFacById(int hfacid){
-        return hotelFacilities.findById(hfacid).get();
+        return hFrepo.findById(hfacid).get();
     }
 
+    public void updateHotelFacilities( HotelFacilities h, int id){
+        hFrepo.save(h);
+    }
 
 
 }

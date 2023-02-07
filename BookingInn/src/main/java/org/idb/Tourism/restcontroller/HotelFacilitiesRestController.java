@@ -36,6 +36,10 @@ public class HotelFacilitiesRestController {
         hotelFacilitiesService.deleteHFacById(id);
     }
 
+    @PutMapping("/hotelfacilities/update/{id}")
+    public void updateFacilities(@RequestBody HotelFacilities h, @PathVariable("id") int id) {
+        hotelFacilitiesService.updateHotelFacilities(h, id);
+    }
 //    @GetMapping("/hotelfacilities/update/{id}")
 //    public HotelFacilities getHotelFacilitiesBylId(@PathVariable("id") int id){
 //      return  hotelFacilitiesService.findHFacById(id);

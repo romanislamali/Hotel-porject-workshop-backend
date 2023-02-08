@@ -18,8 +18,6 @@ public class HotelFacilitiesRestController {
 
     @Autowired
     HotelFacilitiesService hotelFacilitiesService;
-    @Autowired
-    private IHotelFacilitiesRepo iHotelFacilitiesRepo;
 
     @PostMapping("/hotelfacilities/add")
     public void HotelFacilitiesSave(@RequestBody HotelFacilities hf){

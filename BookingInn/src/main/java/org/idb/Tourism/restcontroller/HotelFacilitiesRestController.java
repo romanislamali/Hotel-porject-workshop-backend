@@ -40,9 +40,8 @@ public class HotelFacilitiesRestController {
     public void updateFacilities(@RequestBody HotelFacilities h, @PathVariable("id") int id) {
         hotelFacilitiesService.updateHotelFacilities(h, id);
     }
-//    @GetMapping("/hotelfacilities/update/{id}")
-//    public HotelFacilities getHotelFacilitiesBylId(@PathVariable("id") int id){
-//      return  hotelFacilitiesService.findHFacById(id);
-//    }
-
+    @GetMapping("/hotelfacilities/{id}")
+    public HotelFacilities getHotelFacilitiesBylId(@PathVariable("id") int id){
+      return  hotelFacilitiesService.findHFacById(id);
+    }
 }

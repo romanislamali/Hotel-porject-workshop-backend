@@ -15,6 +15,8 @@ public class Room {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rId;
 
+    private int rStatus;
+
     @Column(length = 50)
     private String rTitle;
 

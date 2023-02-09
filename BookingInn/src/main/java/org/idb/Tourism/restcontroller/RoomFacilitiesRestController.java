@@ -2,11 +2,14 @@ package org.idb.Tourism.restcontroller;
 
 
 
+import org.idb.Tourism.entity.HotelFacilities;
 import org.idb.Tourism.entity.RoomFacilities;
 import org.idb.Tourism.service.RoomFacilitiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/roomfacilities")
@@ -15,42 +18,41 @@ public class RoomFacilitiesRestController {
     RoomFacilitiesService service;
 
 
-    public String roomFacilities_form(Model m){
-        m.addAttribute("rfList", new RoomFacilities());
-        m.addAttribute("rfaciList",service.getAllRoomFacilities());
-        return "roomfacilities-form";
+
+    //-------------working in postman---------
+    @GetMapping("/roomfacilities/all")
+    public List<RoomFacilities> allRoomFacilities(Model m){
+        return service.getAllRoomFacilities();
     }
 
-
-    public String allRoomFacilities(Model m){
-        m.addAttribute("rfaciList",service.getAllRoomFacilities());
-        m.addAttribute("rfList", new RoomFacilities());
-        return "roomfacilitieslist";
-
-    }
-
-
-
-    public String addNewroomfacilities(@ModelAttribute("rfList") RoomFacilities r, Model m ){
+    //-------------working in postman---------
+    @PostMapping("/roomfacilities/add")
+    public void addNewroomfacilities(@RequestBody RoomFacilities r){
         service.saveRoomFacilities(r);
-        return "redirect:/roomfacilities";
-    }
-
-
-
-
-    public String roomfacilitiesUpdateForm(@PathVariable("rfId") Integer rfId, Model m){
-        RoomFacilities r = service.findRoomFacilitiesById(rfId);
-        m.addAttribute("rfList", r);
-        return "roomfacilities-form";
 
     }
 
-
-
-    public String deleteroomfacilities(@PathVariable("rfId") Integer rfId){
+    //------------- working in postman---------
+    @DeleteMapping("/roomfacilities/delete/{rfId}")
+    public void deleteroomfacilities(@PathVariable("rfId") Integer rfId){
         service.deleteRoomFacilitiesById(rfId);
-        return "redirect:/roomfacilities";
+
     }
+
+
+
+    //-------------working in postman---------
+    @PutMapping("/roomfacilities/update/{rtid}")
+    public void updateRoomtype(@RequestBody RoomFacilities rf, @PathVariable("rtid") Integer rtid){
+        service.update(rf, rtid);
+    }
+
+
+    @GetMapping("/roomfacilities/{id}")
+    public RoomFacilities getRoomFacilitiesBylId(@PathVariable("id") int id){
+        return  service.findRoomFacilitiesById(id);
+    }
+
+
 
 }

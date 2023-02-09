@@ -1,5 +1,6 @@
 package org.idb.Tourism.service;
 
+import org.idb.Tourism.entity.HotelFacilities;
 import org.idb.Tourism.entity.Roomtype;
 import org.idb.Tourism.repository.IRoomtypeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,15 @@ public class RoomtypeService {
 
     public Roomtype findByIdRoomType(int rtid){
         return roomtype.findById(rtid).get();
+    }
+    public void update(Roomtype rt, int id){
+        roomtype.save(rt);
+
+    }
+
+
+    public Roomtype findRoomFacById(int hfacid){
+        return roomtype.findById(hfacid).get();
     }
 
 

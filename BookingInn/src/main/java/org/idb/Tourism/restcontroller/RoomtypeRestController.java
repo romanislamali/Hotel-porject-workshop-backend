@@ -1,13 +1,13 @@
 package org.idb.Tourism.restcontroller;
 
+import org.idb.Tourism.entity.RoomFacilities;
 import org.idb.Tourism.entity.Roomtype;
 import org.idb.Tourism.service.RoomtypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/roomtype")
@@ -16,38 +16,36 @@ public class RoomtypeRestController {
     @Autowired
     RoomtypeService roomtypeService;
 
-
-    public  String roomtypeForm(Model m){
-        m.addAttribute("roomtype", new Roomtype());
-        m.addAttribute("allrtype", roomtypeService.getAllRoomtype());
-
-        return "roomtype-form";
+    //    working on postman
+    @GetMapping("/roomtype/all")
+    public List<Roomtype> roomtypeForm(){
+        return roomtypeService.getAllRoomtype();
     }
 
-
-    public  String roomtypeList(Model m){
-        m.addAttribute("allrtype", roomtypeService.getAllRoomtype());
-        m.addAttribute("roomtype", new Roomtype());
-        return "roomtypelist";
-    }
-
-    public  String roomtypeAdd(@ModelAttribute("roomtype") Roomtype rt, Model m){
+    //    working on postman
+    @PostMapping("/roomtype/add")
+    public  void roomtypeAdd(@RequestBody  Roomtype rt){
         roomtypeService.saveRoomtype(rt);
-
-        return "redirect:/roomtype_form";
     }
 
-
-    public  String deleteroomtype(@PathVariable("rtid") Integer rtid){
+    //    working on postman
+    @DeleteMapping("/roomtype/delete/{rtid}")
+    public  void deleteroomtype(@PathVariable("rtid") Integer rtid){
         roomtypeService.deleteRoomtype(rtid);
-        return "redirect:/all_roomtype_list";
     }
 
 
-    public String updateRoomtype(@PathVariable("rtid") Integer rtid, Model m){
-        Roomtype rt = roomtypeService.findByIdRoomType(rtid);
-        m.addAttribute("roomtype", rt);
-        return "roomtype-form";
+    //    working on postman
+    @PutMapping("/roomtype/update/{rtid}")
+    public void updateRoomtype(@RequestBody Roomtype rt, @PathVariable("rtid") Integer rtid){
+        roomtypeService.update(rt, rtid);
     }
+//    @GetMapping("/roomtypebyid/{id}")
+//    public RoomFacilities getRoomFacilitiesBylId(@PathVariable("id") int id){
+//        return  roomtypeService.findRoomFacById(id);
+//    }
+
+
+
 
 }

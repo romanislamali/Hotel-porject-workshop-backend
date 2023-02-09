@@ -34,56 +34,6 @@ public class RoomRestController {
 
 
 
-
-//----------------- save for room from--------------------
-
-
-
-    public String addRoomForm(Model m){
-        m.addAttribute("room" , new Room());
-        m.addAttribute("roomlist" , roomService.getAllRoom());
-        m.addAttribute("roomtypelist" , roomtypeService.getAllRoomtype());
-        m.addAttribute("roomfaclist" , roomFacilitiesService.getAllRoomFacilities());
-        m.addAttribute("hotellist" , hotelService.getAllHotel());
-
-
-        return "room-form";
-    }
-
-
-
-    public String roomList(Model m){
-        m.addAttribute("roomlist" , roomService.getAllRoom());
-        m.addAttribute("roomtypelist" , roomtypeService.getAllRoomtype());
-        m.addAttribute("roomfaclist" , roomFacilitiesService.getAllRoomFacilities());
-        m.addAttribute("hotellist" , hotelService.getAllHotel());
-
-        m.addAttribute("room" , new Room());
-        return "roomlist";
-    }
-
-    public  String roomSave(@ModelAttribute("room") Room r, Model m){
-        roomService.saveRoom(r);
-        return "redirect:/room_form";
-    }
-
-    public String deleteRoom(@PathVariable("rId") Integer rId){
-        roomService.deleteRoomById(rId);
-        return "redirect:/room_list";
-    }
-
-    public String updateRoom(@PathVariable("rId") Integer rId, Model m){
-      Room r =  roomService.findRoomById(rId);
-        m.addAttribute("room", r);
-        m.addAttribute("roomtypelist", roomtypeService.getAllRoomtype());
-        m.addAttribute("roomfaclist", roomFacilitiesService.getAllRoomFacilities());
-        m.addAttribute("hotellist", hotelService.getAllHotel());
-        return "room-form";
-    }
-
-
-//-------------------------------------------------------------------------------------
-
     @GetMapping("/roombyhotelid/{hid}")
     public List<Room> getRoomByHotelId(@PathVariable String hid){
         int hiid = Integer.parseInt(hid);
@@ -92,10 +42,11 @@ public class RoomRestController {
     }
 
     @PatchMapping("/room/status/{id}")
-    public void changeRoomStatus(int id){
-        Room r = roomService.findRoomById(id);
+    public void changeRoomStatus(@PathVariable String id){
+        int rid = Integer.parseInt(id);
+        Room r = roomService.findRoomById(rid);
         r.setRStatus(1);
-        roomService.getAllRoom();
+        roomService.saveRoom(r);
     }
 
 

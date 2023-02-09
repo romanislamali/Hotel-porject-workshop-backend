@@ -91,6 +91,12 @@ public class RoomRestController {
         return  iRoomRepo.findRoomByHotelId(hiid);
     }
 
+    @PatchMapping("/room/status/{id}")
+    public void changeRoomStatus(int id){
+        Room r = roomService.findRoomById(id);
+        r.setRStatus(1);
+        roomService.getAllRoom();
+    }
 
 
 }

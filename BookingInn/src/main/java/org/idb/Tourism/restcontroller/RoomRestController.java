@@ -1,6 +1,6 @@
 package org.idb.Tourism.restcontroller;
 
-import org.idb.Tourism.entity.Hotel;
+import org.idb.Tourism.entity.Location;
 import org.idb.Tourism.entity.Room;
 import org.idb.Tourism.repository.IRoomRepo;
 import org.idb.Tourism.service.HotelService;
@@ -8,7 +8,6 @@ import org.idb.Tourism.service.RoomFacilitiesService;
 import org.idb.Tourism.service.RoomService;
 import org.idb.Tourism.service.RoomtypeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -32,6 +31,10 @@ public class RoomRestController {
     @Autowired
     IRoomRepo iRoomRepo;
 
+    @GetMapping("/room/all")
+    public List<Room> allRoom(){
+        return roomService.getAllRoom();
+    }
 
 
     @GetMapping("/roombyhotelid/{hid}")
@@ -45,7 +48,7 @@ public class RoomRestController {
     public void changeRoomStatus(@PathVariable String id){
         int rid = Integer.parseInt(id);
         Room r = roomService.findRoomById(rid);
-        r.setRStatus(1);
+        r.setRstatus(1);
         roomService.saveRoom(r);
     }
 

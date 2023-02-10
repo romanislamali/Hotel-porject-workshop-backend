@@ -15,8 +15,8 @@ public class RoomService {
         iRoomRepo.save(r);
     }
 
-    public void deleteRoomById(int rId){
-        iRoomRepo.deleteById(rId);
+    public void deleteRoomById(int rid){
+        iRoomRepo.deleteById(rid);
 
     }
 
@@ -25,8 +25,8 @@ public class RoomService {
         return iRoomRepo.findAll();
     }
 
-    public  Room findRoomById(int rId){
-        return iRoomRepo.findById(rId).get();
+    public  Room findRoomById(int rid){
+        return iRoomRepo.findById(rid).get();
     }
 
 

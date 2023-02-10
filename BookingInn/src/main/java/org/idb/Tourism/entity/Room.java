@@ -13,57 +13,45 @@ import javax.persistence.*;
 public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int rId;
+    private int rid;
 
-    private int rStatus;
+    private int rstatus;
 
     @Column(length = 50)
-    private String rTitle;
+    private String rnumber;
 
     @Column(length = 255)
-    private String rDescription;
+    private String rdetails;
 
-    @Column(length = 15)
-    private String rRoomAddress; //room number
+    private String rgallery; //for photos
 
     @Column(length = 50)
-    private String rAvailableRoom;
+    private double rprice;
 
-    private String rGallery; //for photos
+    @Column(length = 50)
+    private double rdiscount;
 
-    @Column(length = 15)
-    private double rRoomPrice;
+    @Column(length = 50)
+    private int radultcapacity;
 
-    @Column(length = 15)
-    private double rDiscount;
+    @Column(length = 50)
+    private int rchildcapacity;
 
-    @Column(length = 15)
-    private int rAdultNumber;
+    @Column(length = 50)
+    private int rtotalbed;
 
-    @Column(length = 15)
-    private int rChildrenNumber;
-
-    @Column(length = 15)
-    private int rBedNumber;
-
-    @Column(length = 25)
-    private double rRoomSize;
-
-    @Column(length = 25)
-    private int rAvailability;
-
-    @Column(length = 25)
-    private String rDetails;
+    @Column(length = 50)
+    private double rsize;
 
     @ManyToOne
-    @JoinColumn(name = "hotelId")
+    @JoinColumn(name = "hid_fk")
     Hotel hotel;
 
     @ManyToOne
-    @JoinColumn(name = "roomtypeId")
+    @JoinColumn(name = "rtid_fk")
     Roomtype roomtype;
 
     @ManyToOne
-    @JoinColumn(name = "roomFacilitiesId")
-    RoomFacilities roomFacilities;
+    @JoinColumn(name = "rfid_fk")
+    RoomFacilities roomfacilities;
 }

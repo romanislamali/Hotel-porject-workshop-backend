@@ -45,12 +45,18 @@ public class RoomRestController {
     }
 
     @PatchMapping("/room/status/{id}")
-    public void changeRoomStatus(@PathVariable String id){
+    public void changeRoomStatusFalse(@PathVariable String id){
         int rid = Integer.parseInt(id);
         Room r = roomService.findRoomById(rid);
         r.setRstatus(1);
         roomService.saveRoom(r);
     }
 
-
+    @PatchMapping("/room/status/true/{id}")
+    public void changeRoomStatusTrue(@PathVariable String id){
+        int rid = Integer.parseInt(id);
+        Room r = roomService.findRoomById(rid);
+        r.setRstatus(0);
+        roomService.saveRoom(r);
+    }
 }

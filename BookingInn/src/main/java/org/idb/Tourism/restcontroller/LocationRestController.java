@@ -2,6 +2,7 @@ package org.idb.Tourism.restcontroller;
 
 
 import org.idb.Tourism.entity.Location;
+import org.idb.Tourism.entity.Room;
 import org.idb.Tourism.service.LocationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -36,5 +37,9 @@ public class LocationRestController {
     public String deleteLocation(@PathVariable("lid") Integer lid){
         ls.deleteLocationById(lid);
         return "redirect:/location_list";
+    }
+    @GetMapping("/location/{lid}")
+    public Location getLocationById(@PathVariable("lid") int lid){;
+        return ls.findLocationById(lid);
     }
 }

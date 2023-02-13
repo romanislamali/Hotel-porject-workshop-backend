@@ -49,26 +49,16 @@ public class HotelRestController {
     }
 
 
-    public  String hotelSave(@ModelAttribute("hotel") Hotel h, @RequestParam("pimg") MultipartFile file, Model m)throws IOException {
-        String imageName = storageService.uploadImage(file);
-        h.setHphoto(imageName);
-        hotelService.saveHotel(h);
-        m.addAttribute("title", "Add Hotel");
-        m.addAttribute("message","Hotel add successful");
-        return "redirect:/h-form";
+    @GetMapping("/hotel/{hid}")
+    public Hotel getHotelById(@PathVariable("hid") int hid){;
+        return hotelService.findHotelById(hid);
     }
 
-
-    public ResponseEntity<?> uploadImage(@PathVariable String file) throws IOException {
-        byte [] imdb = storageService.downloadImage(file);
-        return ResponseEntity.status(HttpStatus.OK)
-                .contentType(MediaType.valueOf("image/png"))
-                .body(imdb);
+    @GetMapping("/hotelbylocationid/{lid}")
+    public List<Hotel> getHotelByLid(@PathVariable String lid){
+        int lidcd = Integer.parseInt(lid);
+        return  iHotelRepo.findHotelByLocationId(lidcd);
     }
-
-
-
-
 
 
     public ResponseEntity<?> downloadImage(@RequestParam("fileName")String fileName){
@@ -80,32 +70,11 @@ public class HotelRestController {
     }
 
 
-    public String updateHotel(@PathVariable("hid") Integer hid, Model m){
-        Hotel h = hotelService.findHotelById(hid);
-        m.addAttribute("hotel", h);
-        m.addAttribute("locationList", locationService.getAllLocation());
-        m.addAttribute("hFaciList", hotelFacilitiesService.getALlHFacilities());
-        return "hotel-form";
-    }
-
-
-    public String deleteHotel(@PathVariable("hid") Integer hid){
-        hotelService.deleteHotelById(hid);
-        return "redirect:/hotel_list";
-    }
-
-
-
-    public  String getAllHotel(){
-        System.out.println(iHotelRepo.findAllHotel());
-
-        return "Hello";
-    }
-
-@GetMapping("/hotelbylocationid/{lid}")
-    public List<Hotel> getHotelByLid(@PathVariable String lid){
-        int lidcd = Integer.parseInt(lid);
-        return  iHotelRepo.findHotelByLocationId(lidcd);
+    public ResponseEntity<?> uploadImage(@PathVariable String file) throws IOException {
+        byte [] imdb = storageService.downloadImage(file);
+        return ResponseEntity.status(HttpStatus.OK)
+                .contentType(MediaType.valueOf("image/png"))
+                .body(imdb);
     }
 
 }

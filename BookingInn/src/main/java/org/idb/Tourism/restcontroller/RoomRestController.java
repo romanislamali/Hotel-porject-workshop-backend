@@ -36,6 +36,10 @@ public class RoomRestController {
         return roomService.getAllRoom();
     }
 
+    @GetMapping("/room/{rid}")
+    public Room getRoomById(@PathVariable("rid") int rid){;
+        return roomService.findRoomById(rid);
+    }
 
     @GetMapping("/roombyhotelid/{hid}")
     public List<Room> getRoomByHotelId(@PathVariable String hid){

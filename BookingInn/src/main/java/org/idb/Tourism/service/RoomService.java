@@ -1,6 +1,7 @@
 package org.idb.Tourism.service;
 
 import org.idb.Tourism.entity.Room;
+import org.idb.Tourism.entity.Roomtype;
 import org.idb.Tourism.repository.IRoomRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,11 @@ public class RoomService {
 
     public  Room findRoomById(int rid){
         return iRoomRepo.findById(rid).get();
+    }
+
+    public void update(Room r, int id){
+        iRoomRepo.save(r);
+
     }
 
 

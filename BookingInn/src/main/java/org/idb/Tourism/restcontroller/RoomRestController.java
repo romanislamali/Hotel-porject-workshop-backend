@@ -31,7 +31,7 @@ public class RoomRestController {
     @Autowired
     IRoomRepo iRoomRepo;
 
-    @GetMapping("/room/all")
+    @GetMapping("room/all")
     public List<Room> allRoom(){
         return roomService.getAllRoom();
     }

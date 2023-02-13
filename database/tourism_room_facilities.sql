@@ -16,33 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `location`
+-- Table structure for table `room_facilities`
 --
 
-DROP TABLE IF EXISTS `location`;
+DROP TABLE IF EXISTS `room_facilities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `location` (
-  `lid` int NOT NULL AUTO_INCREMENT,
-  `lcountry` varchar(60) DEFAULT NULL,
-  `ldescription` varchar(60) DEFAULT NULL,
-  `llat` varchar(60) DEFAULT NULL,
-  `llong` varchar(60) DEFAULT NULL,
-  `lname` varchar(60) DEFAULT NULL,
-  `lphoto` varchar(60) DEFAULT NULL,
-  `lzipcode` varchar(60) DEFAULT NULL,
-  PRIMARY KEY (`lid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `room_facilities` (
+  `rf_id` int NOT NULL AUTO_INCREMENT,
+  `rf_description` varchar(55) DEFAULT NULL,
+  `rf_name` varchar(55) DEFAULT NULL,
+  PRIMARY KEY (`rf_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `location`
+-- Dumping data for table `room_facilities`
 --
 
-LOCK TABLES `location` WRITE;
-/*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` VALUES (1,'Bangladesh','ghh','hhfgh','hhhhhhhg','Dhaka','cmm.jpg','hhfg'),(2,'Bangladesh','gdgfdgdfg','gdgdgf','ghfghfghgf','Chattogram','an.png','fgdfgddf'),(3,'Bangladesh','jghjghjg','jhjhg','tyrytyt',' Khulna','an.png','roiuihiru'),(4,'Bangladesh','jkyujyuj','yujyujyj','yuyuu','Rajshahi','cmm.jpg','poiuoiuj'),(5,'Bangladesh','p89p89p','p89p9p','p89p8p','Rangpur','','9o89o89p'),(6,'Bangladesh','gfhf','bvdb','nhghgg','Mymensingh','cmm.jpg','887o87o'),(7,'Bangladesh','hfh','hhfh','thtrhjh','Sylhet','cmm.jpg','hfhhhf');
-/*!40000 ALTER TABLE `location` ENABLE KEYS */;
+LOCK TABLES `room_facilities` WRITE;
+/*!40000 ALTER TABLE `room_facilities` DISABLE KEYS */;
+INSERT INTO `room_facilities` VALUES (1,'combs, shaving cream, razor, shower cap, hair dryer','Personal care '),(2,'Shampoo, lotion, etc','Toiletries '),(3,'maker, coffee and creamer','Coffee Kit '),(4,'tissue','Tissue box.'),(5,'Bathrobes and slippers','Bathrobes and slippers'),(6,'Air conditioning with individual temperature control','Air conditioning with individual temperature control'),(7,'Separate Rain Shower and bathtub','Separate Rain Shower and bathtub'),(8,'Internet Access – Wireless ( Complimentary )','Internet Access – Wireless ( Complimentary )'),(9,'Refrigerator','Refrigerator'),(10,'Satellite / cable TV','Satellite / cable TV'),(11,'Hair Dryer','Hair Dryer'),(12,'In room electronic safe','In room electronic safe'),(13,'IDD Telephone','IDD Telephone');
+/*!40000 ALTER TABLE `room_facilities` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-11 12:55:46
+-- Dump completed on 2023-02-13 11:24:44

@@ -16,29 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `roomtype`
+-- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `roomtype`;
+DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `roomtype` (
-  `rtid` int NOT NULL AUTO_INCREMENT,
-  `rt_description` varchar(250) DEFAULT NULL,
-  `rt_key` varchar(30) DEFAULT NULL,
-  `rt_name` varchar(30) DEFAULT NULL,
-  PRIMARY KEY (`rtid`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `role` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) DEFAULT NULL,
+  `name` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_8sewwnpamngi6b1dwaa88askk` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `roomtype`
+-- Dumping data for table `role`
 --
 
-LOCK TABLES `roomtype` WRITE;
-/*!40000 ALTER TABLE `roomtype` DISABLE KEYS */;
-INSERT INTO `roomtype` VALUES (2,'1 Single bed','varry goog','Deluxe Single Room'),(3,'2 single bed','nice','Deluxe Twin Room'),(4,'1 extra large double bed','grwrthyt','Deluxe Double room'),(5,'1 extra large double bed','hhthbf','Double Family Room'),(6,'1 large double bed','rgrthbb','Suite with balcony');
-/*!40000 ALTER TABLE `roomtype` ENABLE KEYS */;
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-11 12:55:46
+-- Dump completed on 2023-02-13 11:24:44

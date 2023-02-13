@@ -16,28 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `room_facilities`
+-- Table structure for table `hotel_facilities`
 --
 
-DROP TABLE IF EXISTS `room_facilities`;
+DROP TABLE IF EXISTS `hotel_facilities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `room_facilities` (
-  `rf_id` int NOT NULL AUTO_INCREMENT,
-  `rf_description` varchar(55) DEFAULT NULL,
-  `rf_name` varchar(55) DEFAULT NULL,
-  PRIMARY KEY (`rf_id`)
+CREATE TABLE `hotel_facilities` (
+  `hfacid` int NOT NULL AUTO_INCREMENT,
+  `hfacdiscription` varchar(60) DEFAULT NULL,
+  `hfackeyword` varchar(60) DEFAULT NULL,
+  `hfacname` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`hfacid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `room_facilities`
+-- Dumping data for table `hotel_facilities`
 --
 
-LOCK TABLES `room_facilities` WRITE;
-/*!40000 ALTER TABLE `room_facilities` DISABLE KEYS */;
-INSERT INTO `room_facilities` VALUES (1,'combs, shaving cream, razor, shower cap, hair dryer','Personal care '),(2,'Shampoo, lotion, etc','Toiletries '),(3,'maker, coffee and creamer','Coffee Kit '),(4,'tissue','Tissue box.'),(5,'Bathrobes and slippers','Bathrobes and slippers'),(6,'Air conditioning with individual temperature control','Air conditioning with individual temperature control'),(7,'Separate Rain Shower and bathtub','Separate Rain Shower and bathtub'),(8,'Internet Access – Wireless ( Complimentary )','Internet Access – Wireless ( Complimentary )'),(9,'Refrigerator','Refrigerator'),(10,'Satellite / cable TV','Satellite / cable TV'),(11,'Hair Dryer','Hair Dryer'),(12,'In room electronic safe','In room electronic safe'),(13,'IDD Telephone','IDD Telephone');
-/*!40000 ALTER TABLE `room_facilities` ENABLE KEYS */;
+LOCK TABLES `hotel_facilities` WRITE;
+/*!40000 ALTER TABLE `hotel_facilities` DISABLE KEYS */;
+INSERT INTO `hotel_facilities` VALUES (1,' English','hgjhgjtyhjty','Languages spoken'),(2,'Private check-in/check-out\r\n24-hour front desk','mkjh','Services'),(3,'Toilet paper\r\nTowels\r\nSlippers\r\nToilet','ghtyhthg','Bathroom'),(4,'Coffee house on site\r\nFruits\r\nKid-friendly buffet\r\nKid meals','iuyu','Food & Drink'),(5,' Invoice provided','tyujtu','Reception services'),(6,'No internet access available.','ryry','Internet'),(7,' Balcony \r\nTerrace\r\n Garden','iiuiio','Outdoors'),(8,'Free private parking is possible on site','ujytuj','Parking'),(9,' Telephone','jyjy','Media & Technology'),(10,'\r\n24-hour front desk\r\nMeeting/banquet facilities\r\n\r\n','Room service','Services'),(11,'Fire extinguishers\r\nCCTV outside property\r\n\r\n','bfb','Safety & security'),(12,'Air conditioning\r\nFamily rooms\r\nNon-smoking rooms','dfsdf','General'),(13,' English','fsfs','Languages spoken');
+/*!40000 ALTER TABLE `hotel_facilities` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-11 12:55:46
+-- Dump completed on 2023-02-13 11:24:44

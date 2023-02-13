@@ -16,35 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `payment`
+-- Table structure for table `user_roles`
 --
 
-DROP TABLE IF EXISTS `payment`;
+DROP TABLE IF EXISTS `user_roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `payment` (
-  `pid` int NOT NULL AUTO_INCREMENT,
-  `ac_details` varchar(60) DEFAULT NULL,
-  `p_amount` varchar(60) DEFAULT NULL,
-  `p_date` varchar(60) DEFAULT NULL,
-  `p_type` varchar(60) DEFAULT NULL,
-  `b_id` int DEFAULT NULL,
-  `u_id` int DEFAULT NULL,
-  PRIMARY KEY (`pid`),
-  KEY `FKgihujsmifmw6x85eytooc2o8x` (`b_id`),
-  KEY `FKog5g81n31cbgr2k467xlrrtxf` (`u_id`),
-  CONSTRAINT `FKgihujsmifmw6x85eytooc2o8x` FOREIGN KEY (`b_id`) REFERENCES `booking` (`bid`),
-  CONSTRAINT `FKog5g81n31cbgr2k467xlrrtxf` FOREIGN KEY (`u_id`) REFERENCES `user` (`u_id`)
+CREATE TABLE `user_roles` (
+  `user_id` int NOT NULL,
+  `role_is` int NOT NULL,
+  PRIMARY KEY (`user_id`,`role_is`),
+  KEY `FKqfoeubmmw45cm7wg9b3huujiy` (`role_is`),
+  CONSTRAINT `FK55itppkw3i07do3h7qoclqd4k` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `FKqfoeubmmw45cm7wg9b3huujiy` FOREIGN KEY (`role_is`) REFERENCES `role` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `payment`
+-- Dumping data for table `user_roles`
 --
 
-LOCK TABLES `payment` WRITE;
-/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
-/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+LOCK TABLES `user_roles` WRITE;
+/*!40000 ALTER TABLE `user_roles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -56,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-11 12:55:46
+-- Dump completed on 2023-02-13 11:24:44

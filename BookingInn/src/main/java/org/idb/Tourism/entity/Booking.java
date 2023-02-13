@@ -19,16 +19,29 @@ public class Booking {
     private String bdate;
 
     @Column(length = 60)
-    private int lid;
+    private String checkin;
 
     @Column(length = 60)
-    private int hid;
+    private String checkout;
 
     @Column(length = 60)
-    private int rid;
+    private String location;
 
     @Column(length = 60)
-    private int uid;
+    private String hotelname;
 
+    @Column(length = 60)
+    private String hoteladdress;
 
+    @Column(length = 60)
+    private int roomnumber;
+
+    @Column(length = 60)
+    private String customarname;
+
+    @Column(length = 60)
+    private String email;
+
+    @Column(length = 60)
+    private String cell;
 }

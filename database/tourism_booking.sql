@@ -24,13 +24,18 @@ DROP TABLE IF EXISTS `booking`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `booking` (
   `bid` int NOT NULL AUTO_INCREMENT,
-  `bdate` varchar(60) DEFAULT NULL,
-  `hid` int DEFAULT NULL,
-  `lid` int DEFAULT NULL,
-  `rid` int DEFAULT NULL,
-  `uid` int DEFAULT NULL,
+  `bdatetime` datetime DEFAULT NULL,
+  `cell` varchar(60) DEFAULT NULL,
+  `checkin` varchar(60) DEFAULT NULL,
+  `checkout` varchar(60) DEFAULT NULL,
+  `customarname` varchar(60) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `hoteladdress` varchar(60) DEFAULT NULL,
+  `hotelname` varchar(60) DEFAULT NULL,
+  `location` varchar(60) DEFAULT NULL,
+  `roomnumber` int DEFAULT NULL,
   PRIMARY KEY (`bid`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +44,7 @@ CREATE TABLE `booking` (
 
 LOCK TABLES `booking` WRITE;
 /*!40000 ALTER TABLE `booking` DISABLE KEYS */;
-INSERT INTO `booking` VALUES (1,'date',1,2,1,1),(2,'date',1,2,1,1);
+INSERT INTO `booking` VALUES (17,NULL,NULL,'2023-02-16','2023-02-16',NULL,NULL,NULL,NULL,NULL,0),(18,NULL,NULL,'2023-02-16','2023-02-16',NULL,NULL,NULL,NULL,NULL,0),(19,NULL,NULL,'2023-02-16','2023-02-16',NULL,NULL,'dfhgrfghf','Radison Blue','Chattogram',2005),(20,NULL,NULL,'2023-02-16','2023-02-17',NULL,NULL,NULL,NULL,NULL,0),(21,NULL,NULL,'2023-02-16','2023-02-17',NULL,NULL,'dfhgrfghf','Radison Blue','Chattogram',1001),(22,NULL,NULL,'2023-02-19','2023-02-25',NULL,NULL,NULL,NULL,NULL,0),(23,NULL,NULL,'2023-02-19','2023-02-25',NULL,NULL,'dfhgrfghf','Radison Blue','Chattogram',2005),(24,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0),(25,NULL,NULL,NULL,NULL,NULL,NULL,'dfhgrfghf','Radison Blue','Chattogram',1001),(26,NULL,NULL,'2023-02-16','2023-02-18',NULL,NULL,NULL,NULL,NULL,0),(27,NULL,NULL,'2023-02-16','2023-02-18',NULL,NULL,'dfhgrfghf','Radison Blue','Chattogram',2005),(28,NULL,NULL,'2023-02-16','2023-02-17',NULL,NULL,NULL,NULL,NULL,0),(29,NULL,NULL,'2023-02-16','2023-02-18',NULL,NULL,NULL,NULL,NULL,0),(30,NULL,NULL,'2023-02-16','2023-02-18',NULL,NULL,'dfhgrfghf','Radison Blue','Chattogram',2005),(31,'2023-02-15 12:25:12',NULL,'2023-02-15','2023-02-17',NULL,NULL,NULL,NULL,NULL,0);
 /*!40000 ALTER TABLE `booking` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-13 11:24:45
+-- Dump completed on 2023-02-15 12:43:44

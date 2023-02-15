@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -16,7 +17,7 @@ public class Booking {
     private  int bid;
 
     @Column(length = 60)
-    private String bdate;
+    private LocalDateTime bdatetime;
 
     @Column(length = 60)
     private String checkin;

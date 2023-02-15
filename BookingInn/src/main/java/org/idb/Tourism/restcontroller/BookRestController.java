@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -38,6 +39,8 @@ public class BookRestController {
 
     @PostMapping("/booksave")
     public  void bookSave(@RequestBody Booking b){
+        LocalDateTime ldt = LocalDateTime.now();
+        b.setBdatetime(ldt);
         bookingService.saveBook(b);
     }
 

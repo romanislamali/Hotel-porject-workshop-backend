@@ -44,7 +44,7 @@ CREATE TABLE `room` (
   CONSTRAINT `FKe5mrfoeh9cmq8nelgi7abrfxe` FOREIGN KEY (`rtid_fk`) REFERENCES `roomtype` (`rtid`),
   CONSTRAINT `FKhqnigqsauuadih2vk86wwfpl6` FOREIGN KEY (`hid_fk`) REFERENCES `hotel` (`hid`),
   CONSTRAINT `FKtr0i8nu0rgkouqf71i94o53rv` FOREIGN KEY (`rfid_fk`) REFERENCES `room_facilities` (`rf_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -53,7 +53,7 @@ CREATE TABLE `room` (
 
 LOCK TABLES `room` WRITE;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
-INSERT INTO `room` VALUES (1,4,2,'Beautyfull decoration',0,'no gallery','1001',3500,45,1,2,1,1,6),(2,2,1,'decoration',0,'no gallery','2005',1500,35,0,1,1,5,2);
+INSERT INTO `room` VALUES (1,4,2,'Beautyfull decoration',0,'no gallery','1001',3500,45,0,2,1,1,6),(2,2,1,'decoration',0,'no gallery','2005',1500,35,0,1,1,5,2),(3,4,2,'Beautyfull decoration',0,'no gallery','3042',2500,25,0,2,1,5,6);
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -66,4 +66,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-13 11:24:45
+-- Dump completed on 2023-02-15 12:43:43

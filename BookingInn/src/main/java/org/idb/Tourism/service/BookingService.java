@@ -6,14 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class BookingService {
-
-    @Autowired
+       @Autowired
     IBookingRepo iBookingRepo;
     public  void saveBook(Booking b){
+
+
         iBookingRepo.save(b);
     }
 

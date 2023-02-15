@@ -30,6 +30,9 @@ CREATE TABLE `user` (
   `last_name` varchar(30) NOT NULL,
   `password` varchar(64) NOT NULL,
   `photo` varchar(64) DEFAULT NULL,
+  `cell` varchar(30) DEFAULT NULL,
+  `firstname` varchar(30) DEFAULT NULL,
+  `lastname` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_ob8kqyqqgmefl0aco34akdtpe` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -53,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-13 11:24:44
+-- Dump completed on 2023-02-15 12:43:42

@@ -12,16 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/roomfacilities")
+@CrossOrigin(origins = {"*"})
 public class RoomFacilitiesRestController {
     @Autowired
     RoomFacilitiesService service;
 
-
-
-    //-------------working in postman---------
     @GetMapping("/roomfacilities/all")
-    public List<RoomFacilities> allRoomFacilities(Model m){
+    public List<RoomFacilities> allRoomFacilities(){
         return service.getAllRoomFacilities();
     }
 

@@ -31,8 +31,6 @@ public class BookRestController {
 
     @Autowired
     RoomtypeService roomtypeService;
-    @Autowired
-    InventoryService inventoryService;
 
     @Autowired
     BookingService bookingService;

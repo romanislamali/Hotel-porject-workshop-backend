@@ -30,8 +30,6 @@ public class BookController {
 
     @Autowired
     RoomtypeService roomtypeService;
-    @Autowired
-    InventoryService inventoryService;
 
     @Autowired
     BookingService bookingService;
@@ -44,7 +42,6 @@ public class BookController {
         m.addAttribute("roomList", roomService.getAllRoom());
         m.addAttribute("roomFacList", roomFacilitiesService.getAllRoomFacilities());
         m.addAttribute("roomTypeList", roomtypeService.getAllRoomtype());
-        m.addAttribute("invList", inventoryService.getAllinventory());
 
         m.addAttribute("booking", new Booking());
         return "bookinglist";

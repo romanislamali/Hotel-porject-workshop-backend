@@ -44,6 +44,10 @@ public class Room {
     private double rsize;
 
     @ManyToOne
+    @JoinColumn(name = "lid_fk")
+    Location location;
+
+    @ManyToOne
     @JoinColumn(name = "hid_fk")
     Hotel hotel;
 

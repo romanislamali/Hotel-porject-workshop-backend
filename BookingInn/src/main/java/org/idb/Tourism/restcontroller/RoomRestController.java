@@ -48,28 +48,29 @@ public class RoomRestController {
         return  iRoomRepo.findRoomByHotelId(hiid);
     }
 
-    @PatchMapping("/room/status/{id}")
-    public void changeRoomStatusFalse(@PathVariable String id){
+    @PatchMapping("/room/dactive/{id}")
+    public void dactiveRoom(@PathVariable String id){
         int rid = Integer.parseInt(id);
         Room r = roomService.findRoomById(rid);
         r.setRstatus(1);
         roomService.saveRoom(r);
     }
 
-    @PatchMapping("/room/status/true/{id}")
-    public void changeRoomStatusTrue(@PathVariable String id){
+    @PatchMapping("/room/active/{id}")
+    public void activeRoom(@PathVariable String id){
         int rid = Integer.parseInt(id);
         Room r = roomService.findRoomById(rid);
         r.setRstatus(0);
         roomService.saveRoom(r);
     }
-// starting here
+
+    //     This is for add new room
     @PostMapping("/room/add")
     public  void roomAdd(@RequestBody Room r){
         roomService.saveRoom(r);
     }
 
-    //    working on postman
+    //    This is for delete room by id
     @DeleteMapping("/room/delete/{rid}")
     public  void deleteroom(@PathVariable("rid") Integer rid){
         roomService.deleteRoomById(rid);

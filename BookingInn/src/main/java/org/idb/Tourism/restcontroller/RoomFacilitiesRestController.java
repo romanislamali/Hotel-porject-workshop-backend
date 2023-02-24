@@ -39,9 +39,9 @@ public class RoomFacilitiesRestController {
 
 
     //-------------working in postman---------
-    @PutMapping("/roomfacilities/update/{rtid}")
-    public void updateRoomtype(@RequestBody RoomFacilities rf, @PathVariable("rtid") Integer rtid){
-        service.update(rf, rtid);
+    @PutMapping("/roomfacilities/update/{rfid}")
+    public void updateRoomFacilities(@RequestBody RoomFacilities rf, @PathVariable("rfid") Integer rfid){
+        service.update(rf, rfid);
     }
 
 

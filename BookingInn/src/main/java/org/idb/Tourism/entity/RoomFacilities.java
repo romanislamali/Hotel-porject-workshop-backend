@@ -15,13 +15,13 @@ public class RoomFacilities {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  int rfId;
+    private  int rfid;
 
     @Column(length = 55)
-    private String rfName;
+    private String rfname;
 
     @Column(length = 55)
-    private String rfDescription;
+    private String rfdescription;
 
 
 }

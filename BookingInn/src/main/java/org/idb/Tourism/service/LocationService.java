@@ -2,6 +2,7 @@ package org.idb.Tourism.service;
 
 
 import org.idb.Tourism.entity.Location;
+import org.idb.Tourism.entity.Room;
 import org.idb.Tourism.repository.ILocationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,10 @@ public class LocationService {
     public List<Location> getAllLocation(){
 
         return lRepo.findAll();
+    }
+
+    public void update(Location l, int id){
+        lRepo.save(l);
     }
 
     public  Location findLocationById(int lid){

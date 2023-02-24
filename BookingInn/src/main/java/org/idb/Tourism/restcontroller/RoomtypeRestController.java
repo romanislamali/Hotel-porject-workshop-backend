@@ -1,5 +1,6 @@
 package org.idb.Tourism.restcontroller;
 
+import org.idb.Tourism.entity.Location;
 import org.idb.Tourism.entity.RoomFacilities;
 import org.idb.Tourism.entity.Roomtype;
 import org.idb.Tourism.service.RoomtypeService;
@@ -40,10 +41,13 @@ public class RoomtypeRestController {
     public void updateRoomtype(@RequestBody Roomtype rt, @PathVariable("rtid") Integer rtid){
         roomtypeService.update(rt, rtid);
     }
-//    @GetMapping("/roomtypebyid/{id}")
-//    public RoomFacilities getRoomFacilitiesBylId(@PathVariable("id") int id){
-//        return  roomtypeService.findRoomFacById(id);
-//    }
+
+    @GetMapping("/roomtype/{rtid}")
+    public Roomtype getRoomtypeById(@PathVariable("rtid") int rtid){
+        return roomtypeService.findRoomtypeById(rtid);
+    }
+
+
 
 
 

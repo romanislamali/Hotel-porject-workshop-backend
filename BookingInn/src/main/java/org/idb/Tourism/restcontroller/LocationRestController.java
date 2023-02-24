@@ -28,18 +28,22 @@ public class LocationRestController {
 
 
     @PutMapping("/location/update/{id}")
-    public String updateLocation(@PathVariable("lid") Integer lid){
-        Location l = ls.findLocationById(lid);
-        return "location-form";
+    public void updateLocation(@RequestBody Location l ,@PathVariable("id")  Integer id){
+      ls.update(l, id);
+
     }
 
     @DeleteMapping("/location/delete/{id}")
-    public String deleteLocation(@PathVariable("lid") Integer lid){
-        ls.deleteLocationById(lid);
-        return "redirect:/location_list";
+    public void deleteLocation(@PathVariable("id") int id){
+        ls.deleteLocationById(id);
     }
     @GetMapping("/location/{lid}")
     public Location getLocationById(@PathVariable("lid") int lid){;
         return ls.findLocationById(lid);
     }
+
+
+
+
+
 }

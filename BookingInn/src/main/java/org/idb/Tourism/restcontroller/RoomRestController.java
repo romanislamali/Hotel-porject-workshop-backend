@@ -4,6 +4,7 @@ import org.idb.Tourism.entity.ImageData;
 import org.idb.Tourism.entity.Room;
 import org.idb.Tourism.repository.IImgDataRepo;
 import org.idb.Tourism.repository.IRoomRepo;
+import org.idb.Tourism.repository.StorageRepository;
 import org.idb.Tourism.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -37,6 +38,9 @@ public class RoomRestController {
     @Autowired
     IImgDataRepo iImgDataRepo;
 
+    @Autowired
+    StorageRepository storageRepository;
+
     String profileImage = "";
 
     @GetMapping("room/all")
@@ -44,10 +48,10 @@ public class RoomRestController {
         return roomService.getAllRoom();
     }
 
-    @GetMapping("/get_img_by_name/{imgName}")
-    public byte[] getImagname(@PathVariable("imgName")String imgName){
-        return storageService.downloadImage(imgName);
-    }
+//    @GetMapping("/get_img_by_name/{imgName}")
+//    public ImageData getImagname(@PathVariable("imgName")String imgName){
+//        return storageRepository.xx(imgName);
+//    }
 
     @GetMapping("/get_img")
     public List<ImageData> getImagByte(){

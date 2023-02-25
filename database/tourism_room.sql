@@ -46,8 +46,8 @@ CREATE TABLE `room` (
   CONSTRAINT `FK4jy4ogeau3jb3gbvgine4fyp` FOREIGN KEY (`lid_fk`) REFERENCES `location` (`lid`),
   CONSTRAINT `FKe5mrfoeh9cmq8nelgi7abrfxe` FOREIGN KEY (`rtid_fk`) REFERENCES `roomtype` (`rtid`),
   CONSTRAINT `FKhqnigqsauuadih2vk86wwfpl6` FOREIGN KEY (`hid_fk`) REFERENCES `hotel` (`hid`),
-  CONSTRAINT `FKtr0i8nu0rgkouqf71i94o53rv` FOREIGN KEY (`rfid_fk`) REFERENCES `room_facilities` (`rf_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `FKtr0i8nu0rgkouqf71i94o53rv` FOREIGN KEY (`rfid_fk`) REFERENCES `room_facilities` (`rfid`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `room` (
 
 LOCK TABLES `room` WRITE;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
-INSERT INTO `room` VALUES (1,4,2,'Beautyfull decoration',0,'no gallery','1001',3500,45,0,2,1,1,6,NULL),(2,2,1,'decoration',0,'no gallery','2005',1500,35,0,1,1,5,2,NULL),(3,4,2,'Beautyfull ',0,'gallery','3004',4000,45,0,2,1,1,6,NULL),(4,0,0,'fddsf',0,NULL,'54',2323,25,0,0,NULL,NULL,NULL,NULL),(14,0,0,'fdsaff',4545,NULL,'457564',454545,4545,0,0,NULL,NULL,NULL,NULL),(15,4545,4544,'dsfdsfdsf',4545,NULL,'5445',45464,4545,0,0,NULL,NULL,NULL,NULL),(16,4545,4544,'dsfdsfdsf',4545,'C:\\fakepath\\1675821682688.jfif','5445',45464,4545,0,0,NULL,NULL,NULL,NULL),(17,5656,6566,'dfdsf',5656,'C:\\fakepath\\g2.webp','566',5656,5656,0,0,NULL,NULL,NULL,NULL),(18,456456,5466,'gfvfdsgfdg',456456,NULL,'65546',56546,456456,0,0,NULL,NULL,NULL,NULL);
+INSERT INTO `room` VALUES (1,4,2,'Beautyfull decoration',0,'no gallery','1001',3500,45,0,2,1,1,6,1),(2,2,1,'decoration',0,'no gallery','2005',1500,35,0,1,1,5,2,1),(3,4,2,'Beautyfull decoration',0,'no gallery','3042',2500,25,0,2,1,5,6,1),(4,4545,45,'gfsdafdsfsaf',4554,'jzfqChotellogo.jpg','4545',275,4545,0,0,1,NULL,2,1);
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -69,4 +69,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-19  1:57:16
+-- Dump completed on 2023-02-25 10:20:42

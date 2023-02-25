@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `room_facilities`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `room_facilities` (
-  `rf_id` int NOT NULL AUTO_INCREMENT,
-  `rf_description` varchar(55) DEFAULT NULL,
-  `rf_name` varchar(55) DEFAULT NULL,
-  PRIMARY KEY (`rf_id`)
+  `rfid` int NOT NULL AUTO_INCREMENT,
+  `rfdescription` varchar(55) DEFAULT NULL,
+  `rfname` varchar(55) DEFAULT NULL,
+  PRIMARY KEY (`rfid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-19  1:57:17
+-- Dump completed on 2023-02-25 10:20:41

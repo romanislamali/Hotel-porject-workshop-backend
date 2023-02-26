@@ -1,6 +1,7 @@
 package org.idb.Tourism.service;
 
 import org.idb.Tourism.entity.Booking;
+import org.idb.Tourism.entity.Location;
 import org.idb.Tourism.repository.IBookingRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,10 @@ public class BookingService {
 
     public Booking findBookingById(int bId){
         return iBookingRepo.findById(bId).get();
+    }
+
+    public void update(Booking b, int id){
+        iBookingRepo.save(b);
     }
 
 

@@ -14,5 +14,8 @@ public interface IBookingRepo extends JpaRepository<Booking, Integer> {
     @Query("select max(b.bid) from Booking b")
     public Integer findMaxBookingId();
 
+    @Query("select b From Booking b where b.bid = ?1")
+    public Booking findBybookId(int id);
+
 
 }

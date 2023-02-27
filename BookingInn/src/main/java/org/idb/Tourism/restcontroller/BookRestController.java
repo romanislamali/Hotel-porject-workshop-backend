@@ -52,8 +52,10 @@ public class BookRestController {
 
     @PutMapping("/booking/update/{id}")
     public void updateBooking(@RequestBody Booking b ,@PathVariable("id")  Integer id){
-        bookingService.update(b, id);
-
+        Booking book = new Booking();
+        book = iBookingRepo.findBybookId(id);
+        book.setEmail(b.getEmail());
+        iBookingRepo.save(book);
     }
 
     @GetMapping("/booking/maxid")

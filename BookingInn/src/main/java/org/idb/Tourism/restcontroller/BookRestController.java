@@ -46,5 +46,4 @@ public class BookRestController {
     public List<Booking> allBooking(){
         return bookingService.getAllBooking();
     }
-
 }

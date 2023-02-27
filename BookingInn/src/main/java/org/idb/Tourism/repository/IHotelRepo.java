@@ -21,4 +21,7 @@ public interface IHotelRepo extends JpaRepository<Hotel, Integer>, JpaSpecificat
     @Query("select h from Hotel h where h.location.lid=?1")
     public List<Hotel> findHotelByLocationId(int id);
 
+
+
+
 }

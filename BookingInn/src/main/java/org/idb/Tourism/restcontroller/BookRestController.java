@@ -4,6 +4,7 @@ package org.idb.Tourism.restcontroller;
 import org.idb.Tourism.entity.Booking;
 
 import org.idb.Tourism.entity.Location;
+import org.idb.Tourism.repository.IBookingRepo;
 import org.idb.Tourism.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -33,6 +34,8 @@ public class BookRestController {
     RoomtypeService roomtypeService;
 
     @Autowired
+    IBookingRepo iBookingRepo;
+    @Autowired
     BookingService bookingService;
 
     @PostMapping("/booksave")
@@ -46,4 +49,17 @@ public class BookRestController {
     public List<Booking> allBooking(){
         return bookingService.getAllBooking();
     }
+
+    @PutMapping("/booking/update/{id}")
+    public void updateBooking(@RequestBody Booking b ,@PathVariable("id")  Integer id){
+        bookingService.update(b, id);
+
+    }
+
+    @GetMapping("/booking/maxid")
+    public Integer maxBookingId(){
+        return iBookingRepo.findMaxBookingId();
+    }
+
+
 }

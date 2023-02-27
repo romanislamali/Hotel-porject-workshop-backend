@@ -47,7 +47,7 @@ CREATE TABLE `room` (
   CONSTRAINT `FKe5mrfoeh9cmq8nelgi7abrfxe` FOREIGN KEY (`rtid_fk`) REFERENCES `roomtype` (`rtid`),
   CONSTRAINT `FKhqnigqsauuadih2vk86wwfpl6` FOREIGN KEY (`hid_fk`) REFERENCES `hotel` (`hid`),
   CONSTRAINT `FKtr0i8nu0rgkouqf71i94o53rv` FOREIGN KEY (`rfid_fk`) REFERENCES `room_facilities` (`rfid`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `room` (
 
 LOCK TABLES `room` WRITE;
 /*!40000 ALTER TABLE `room` DISABLE KEYS */;
-INSERT INTO `room` VALUES (1,4,2,'Beautyfull decoration',0,'no gallery','1001',3500,45,0,2,1,1,6,1),(2,2,1,'decoration',0,'no gallery','2005',1500,35,0,1,1,5,2,1),(3,4,2,'Beautyfull decoration',0,'no gallery','3042',2500,25,0,2,1,5,6,1),(4,4545,45,'gfsdafdsfsaf',4554,'jzfqChotellogo.jpg','4545',275,4545,0,0,1,NULL,2,1);
+INSERT INTO `room` VALUES (1,4,2,'Beautyfull decoration',0,'jzfqChotellogo.jpg','1001',350,45,1,2,1,1,6,1),(2,2,1,'decoration',20,'jzfqChotellogo.jpg','2005',150,35,0,1,1,5,2,1),(3,4,2,'Beautyfull decoration',0,'jzfqChotellogo.jpg','3042',250,25,0,2,1,1,6,1),(4,2,1,'gfsdafdsfsaf',50,'jzfqChotellogo.jpg','4545',275,28,0,4,2,5,2,2),(5,4,2,'Beautyfull decoration',0,'jzfqChotellogo.jpg','5007',350,36,0,2,2,1,6,2),(6,4,2,'Beautyfull decoration',20,'jzfqChotellogo.jpg','1200',265,28,0,1,2,5,2,2),(7,6,4,'Beautyfull ',35,'jzfqChotellogo.jpg','1700',230,22,0,2,3,1,6,3),(8,5,2,'decoration',0,'jzfqChotellogo.jpg','3500',315,26,0,1,3,5,2,3),(9,3,1,'Beautyfull ',15,'jzfqChotellogo.jpg','4544',120,42,0,2,3,1,6,3);
 /*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -69,4 +69,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-02-25 10:20:42
+-- Dump completed on 2023-02-27 12:20:20
